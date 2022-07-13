@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="vbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comp261.assig3.GraphController">
+    <children>
+      <AnchorPane fx:id="anchor" prefHeight="200.0" prefWidth="200.0" />
+        <GridPane alignment="center" hgap="10" vgap="10">
+            <children>
+                <Button fx:id="load" alignment="center" onAction="#handleLoad" prefHeight="25.0" prefWidth="75.0" text="%load" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Button fx:id="quit" alignment="center" onAction="#handleQuit" prefHeight="25.0" prefWidth="74.0" text="%quit" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+                <Button fx:id="zoomin" alignment="center" onAction="#handleZoomin" prefWidth="30" text="+" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Button fx:id="zoomout" alignment="center" onAction="#handleZoomout" prefWidth="30" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Button fx:id="up" alignment="center" onAction="#handleUp" prefWidth="50" text="Up" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                <Button fx:id="down" alignment="center" onAction="#handleDown" prefWidth="50" text="Down" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Button fx:id="left" alignment="center" onAction="#handleLeft" prefWidth="50" text="Left" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <Button fx:id="right" alignment="center" onAction="#handleRight" prefWidth="50" text="Right" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+               <CheckBox fx:id="edgeWeight_ch" mnemonicParsing="false" onAction="#displayUpdate" text="Edge Weight" GridPane.columnIndex="6" />
+               <CheckBox fx:id="nodeNames_ch" mnemonicParsing="false" onAction="#displayUpdate" text="Node Names" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+              
+               <Button fx:id="networkFlow" alignment="center" onAction="#handleNetworkFlow" prefHeight="25.0" prefWidth="75.0" text="N Flow" GridPane.columnIndex="4" GridPane.rowIndex="0" /> 
+               <Button fx:id="networkFlowPaths" alignment="center" onAction="#handleAugmentationPaths" prefHeight="25.0" prefWidth="75.0" text="F Paths" GridPane.columnIndex="4" GridPane.rowIndex="1" /> 
+               <Button fx:id="MinCut" alignment="center" onAction="#handleMinCut" prefHeight="25.0" prefWidth="75.0" text="Min-Cut" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+            <ComboBox fx:id="vehicleType" prefHeight="26.0" prefWidth="82.0" onAction= "#handleVehicle" GridPane.columnIndex="5" GridPane.rowIndex="1" /> 
+            
+            </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+        <TextArea fx:id="tripText" prefHeight="200.0" prefWidth="800.0" />
+        <Canvas fx:id="mapCanvas" Height="540" Width="800" onMouseClicked="#handleMouseClick" />
+      <VBox prefHeight="200.0" prefWidth="100.0" />
+    </children>
+<!-- </VBox> -->
+<!--  -->
+</VBox>
